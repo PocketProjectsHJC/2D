@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Projects Base</title>
-    <style>
-      *{
-        padding: 0;
-        margin: 0;
-      }
-      body{
-        width: 100vw;
-        height: 100vh;
-      }
-      canvas {
-        width: 526px;
-        height: 526px;
-        background-color: rgb(0,200,255);
-      }
-    </style>
+    <title>#️⃣ TIC TAC TOE #️⃣</title>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-   <canvas width="2000" height="2000"></canvas>
-   <script src="script.js"></script>
+    <div id="grid">
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+      <div class="cell"></div>
+    </div>
+    <div id="gameover">
+      <p id="message">X WINS!</p>
+      <button onclick="restart()" restart>RESTART</button>
+    </div>
   </body>
+  <script src="script.js"></script>
 </html>
