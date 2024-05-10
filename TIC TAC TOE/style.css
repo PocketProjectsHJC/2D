@@ -1,1 +1,90 @@
-
+:root{
+  --c1: rgb(255,255,255);
+  --c2: rgb(100,100,100);
+  --c3: rgb(0,0,0);
+}
+*{
+  padding: 0;
+  margin: 0;
+  font-family: Georgia;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(0,var(--c1),var(--c2),var(--c3));
+}
+#grid{
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  grid-template-columns: repeat(3,auto);
+}
+.cell{
+  position: relative;
+  display: flex;
+  width: 100px;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  border: 4px solid var(--c2);
+}
+.cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3){
+  border-top: none;
+}
+.cell:nth-child(1),.cell:nth-child(4),.cell:nth-child(7){
+  border-left: none;
+}
+.cell:nth-child(7),.cell:nth-child(8),.cell:nth-child(9){
+  border-bottom: none;
+}
+.cell:nth-child(3),.cell:nth-child(6),.cell:nth-child(9){
+  border-right: none;
+}
+.cell.x::before,.cell.x::after{
+  content: "";
+  border: none;
+  width: 100px;
+  height: 10px;
+  background-color: var(--c1);
+  position: absolute;
+}
+.cell.x::before{
+  transform: rotate(45deg);
+}
+.cell.x::after{
+  transform: rotate(-45deg);
+}
+.cell.o::before{
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 10px solid var(--c3);
+  border-radius: 50%;
+}
+#gameover{
+  display: none;
+}
+#message{
+  position: absolute;
+  font-size: 3rem;
+  left: 50px;
+  top: 125px;
+  color: var(--c1);
+}
+button[restart]{
+  position: absolute;
+  color: var(--c2);
+  background-color: var(--c3);
+  left: 100px;
+  top: 200px;
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+  font-size: 2rem;
+  border: 1px solid var(--c1);
+}
